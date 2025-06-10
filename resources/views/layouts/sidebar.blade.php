@@ -122,6 +122,12 @@
 
     <!-- User profile section -->
     <div class="border-t border-gray-200 dark:border-gray-700 p-6">
+        <!-- Theme toggle for mobile -->
+        <div class="flex items-center justify-between mb-4 lg:hidden">
+            <span class="text-sm font-medium text-gray-700 dark:text-gray-300">Theme</span>
+            <x-theme-toggle size="sm" />
+        </div>
+
         <div class="flex items-center gap-x-3">
             <div class="h-10 w-10 rounded-full bg-gradient-to-r from-blue-500 to-purple-600 flex items-center justify-center text-white font-semibold">
                 {{ substr(Auth::user()->name, 0, 1) }}

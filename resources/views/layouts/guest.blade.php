@@ -15,6 +15,11 @@
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
     <body class="font-inter text-gray-900 dark:text-gray-100 antialiased bg-gray-50 dark:bg-gray-950">
+        <!-- Theme toggle button for guest pages -->
+        <div class="absolute top-4 right-4 z-50">
+            <x-theme-toggle size="md" />
+        </div>
+
         <div class="min-h-screen flex flex-col justify-center py-12 sm:px-6 lg:px-8">
             <!-- Header -->
             <div class="sm:mx-auto sm:w-full sm:max-w-md">

@@ -71,12 +71,18 @@
                             @endisset
 
                             <!-- User menu -->
-                            <div class="flex items-center gap-x-4 lg:gap-x-6">
+                            <div class="flex items-center gap-x-2 lg:gap-x-4">
+                                <!-- Theme Toggle -->
+                                <x-theme-toggle size="md" class="hidden sm:flex" />
+
                                 <!-- Notifications -->
-                                <button type="button" class="relative p-2 text-gray-400 hover:text-gray-500 dark:hover:text-gray-300">
+                                <button type="button" class="relative p-2 text-gray-400 hover:text-gray-500 dark:hover:text-gray-300 rounded-lg">
+                                    <span class="sr-only">View notifications</span>
                                     <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
                                         <path stroke-linecap="round" stroke-linejoin="round" d="M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0" />
                                     </svg>
+                                    <!-- Notification badge -->
+                                    <span class="absolute -top-1 -right-1 h-3 w-3 rounded-full bg-red-500 ring-2 ring-white dark:ring-gray-900"></span>
                                 </button>
 
                                 <!-- Profile dropdown -->
@@ -97,13 +103,28 @@
 
                                     <x-slot name="content">
                                         <x-dropdown-link :href="route('profile.edit')">
+                                            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+                                            </svg>
                                             {{ __('Profile') }}
                                         </x-dropdown-link>
+
+                                        <!-- Theme toggle in dropdown -->
+                                        <div class="px-4 py-2.5 sm:hidden">
+                                            <div class="flex items-center justify-between">
+                                                <span class="text-sm font-medium text-gray-700 dark:text-gray-300">Theme</span>
+                                                <x-theme-toggle size="sm" />
+                                            </div>
+                                        </div>
+
                                         <hr class="my-1 border-gray-200 dark:border-gray-600">
                                         <form method="POST" action="{{ route('logout') }}">
                                             @csrf
                                             <x-dropdown-link :href="route('logout')"
                                                     onclick="event.preventDefault(); this.closest('form').submit();">
+                                                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"></path>
+                                                </svg>
                                                 {{ __('Log Out') }}
                                             </x-dropdown-link>
                                         </form>
