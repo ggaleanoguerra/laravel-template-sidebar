@@ -56,9 +56,7 @@
                             <!-- Mobile menu button -->
                             <button @click="sidebarOpen = true"
                                     class="lg:hidden inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:bg-gray-100 hover:text-gray-500 dark:hover:bg-gray-800 dark:hover:text-gray-300 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500">
-                                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-                                </svg>
+                                <x-icons.menu />
                             </button>
 
                             <!-- Page title -->
@@ -78,9 +76,7 @@
                                 <!-- Notifications -->
                                 <button type="button" class="relative p-2 text-gray-400 hover:text-gray-500 dark:hover:text-gray-300 rounded-lg">
                                     <span class="sr-only">View notifications</span>
-                                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0" />
-                                    </svg>
+                                    <x-icons.notification />
                                     <!-- Notification badge -->
                                     <span class="absolute -top-1 -right-1 h-3 w-3 rounded-full bg-red-500 ring-2 ring-white dark:ring-gray-900"></span>
                                 </button>
@@ -103,9 +99,7 @@
 
                                     <x-slot name="content">
                                         <x-dropdown-link :href="route('profile.edit')">
-                                            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
-                                            </svg>
+                                            <x-icons.profile class="w-4 h-4 mr-2" />
                                             {{ __('Profile') }}
                                         </x-dropdown-link>
 
@@ -122,9 +116,7 @@
                                             @csrf
                                             <x-dropdown-link :href="route('logout')"
                                                     onclick="event.preventDefault(); this.closest('form').submit();">
-                                                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"></path>
-                                                </svg>
+                                                <x-icons.logout class="w-4 h-4 mr-2" />
                                                 {{ __('Log Out') }}
                                             </x-dropdown-link>
                                         </form>
